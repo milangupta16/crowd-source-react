@@ -1,0 +1,39 @@
+{
+    "name": "react-hooks-redux-registration-login-example",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cornflourblue/react-hooks-redux-registration-login-example.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack --mode production",
+        "start": "webpack-dev-server --open"
+    },
+    "dependencies": {
+        "@babel/plugin-transform-runtime": "^7.13.15",
+        "axios": "^0.21.1",
+        "css-loader": "^5.2.1",
+        "history": "^4.10.1",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "react-icons": "^4.2.0",
+        "react-redux": "^7.2.0",
+        "react-router-dom": "^5.2.0",
+        "redux": "^4.0.5",
+        "redux-logger": "^4.0.0",
+        "redux-thunk": "^2.3.0",
+        "styled-components": "^5.2.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.5",
+        "html-webpack-plugin": "^3.2.0",
+        "path": "^0.12.7",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-server": "^3.2.1"
+    }
+}
