@@ -47,7 +47,7 @@ function register(user) {
                 user => { 
                     dispatch(success());
                     history.push('/login');
-                    dispatch(alertActions.success('Registration successful'));
+                    dispatch(alertActions.success('You are successfully registered. Please login to continue!'));
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -76,6 +76,8 @@ function getAll() {
     function success(users) { return { type: userConstants.GETALL_SUCCESS, users } }
     function failure(error) { return { type: userConstants.GETALL_FAILURE, error } }
 }
+
+
 
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {

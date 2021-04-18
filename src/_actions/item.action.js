@@ -2,10 +2,12 @@ import { itemConstants } from '../_constants';
 import { itemService } from '../_services';
 import { alertActions } from './';
 import { history } from '../_helpers';
-
+import { userConstants } from '../_constants';
+import { userService } from '../_services';
 export const itemActions = {
     add,
     post,
+    getreqitems,
     // getAll,
    // delete: _delete
 };
@@ -58,5 +60,27 @@ function post(item,ID) {
 }
 
 
+function getreqitems(user) {
+    return dispatch => {
+        dispatch(request({user}));
 
+        itemService.getreqitems(user)
+            .then(
+                user => { 
+                    dispatch(success(user));
+                    history.push('/ShowReqItems');
+                    dispatch(alertActions.success('Got Requested Item successfully'));
+                },
+                error => {
+                    console.log("****");
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(item) { return { type: itemConstants.ADD_REQUEST, item } }
+    function success(item) { return { type: itemConstants.ADD_SUCCESS, item } }
+    function failure(error) { return { type: itemConstants.ADD_FAILURE, error } }
+}
 // prefixed function name with underscore because delete is a reserved word in javascript

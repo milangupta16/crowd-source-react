@@ -26,7 +26,11 @@ function login(username, password) {
         .then(user => {
             console.log(JSON.stringify(user));
             // store user details and jwt token in local storage to keep user logged in between page refreshes
+       
+
+            
             localStorage.setItem('user', JSON.stringify(user));
+            
             localStorage.setItem('name',username);
             return user;
         });
@@ -45,6 +49,7 @@ function getAll() {
 
     return axios.get(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
 }
+
 
 function getById(id) {
     const requestOptions = {

@@ -1,14 +1,15 @@
 import axios from 'axios';
-import config from 'config';
+import config from 'config'
 import { authHeader } from '../_helpers';
 
 export const itemService = {
     add,
     post,
+    getreqitems,
     // delete: _delete
 };
 
-const user = localStorage.getItem("user");
+
 
 // axios.interceptors.request.use(
 //     config => {
@@ -34,6 +35,12 @@ async function add(item) {
 
     return await axios.post(`${config.apiUrl}/requestItem`, body, {headers: authHeader()}).then(handleResponse);
 }
+
+ async function getreqitems(user) {
+
+
+    return await axios.get(`${config.apiUrl}/getUserReqItems`,{params:{user:user}}).then(handleResponse);
+ }
 
 async function post(item,ID) {
     // const requestOptions = {

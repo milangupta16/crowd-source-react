@@ -4,7 +4,8 @@
 // ===============
 // */
 // import styled from 'styled-components';
-// // :root {
+
+// // .app {
 // //   /* dark shades of primary color*/
 // //   --clr-primary-1: hsl(205, 86%, 17%);
 // //   --clr-primary-2: hsl(205, 77%, 27%);
@@ -54,11 +55,11 @@
 // //   --clr-orange-9: hsl(13, 73%, 25%);
 // //   --clr-orange-10: hsl(13, 73%, 16%);
 // // }
-// // /*
-// // =============== 
-// // Global Styles
-// // ===============
-// // */
+// /*
+// =============== 
+// Global Styles
+// ===============
+// */
 
 // // *,
 // // ::after,
@@ -67,7 +68,7 @@
 // //   padding: 0;
 // //   box-sizing: border-box;
 // // }
-// // body {
+// // .body {
 // //   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 // //     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 // //   background: var(--clr-grey-10);
@@ -81,10 +82,13 @@
 // // a {
 // //   text-decoration: none;
 // // }
-// // h1,
-// // h2,
-// // h3,
-// // h4 {
+// // .h1,
+// // .h2,
+// // .h3,
+// // .h4 {
+// //   letter-spacing: var(--spacing);
+// //   text-transform: capitalize;
+// //   line-height: 1.25;
 // //   letter-spacing: var(--spacing);
 // //   text-transform: capitalize;
 // //   line-height: 1.25;
@@ -296,25 +300,26 @@
 //   background: var(--clr-white);
 //   border-radius: var(--radius);
 // }`;
-// export const product_img=styled(product) {
-//   border-top-left-radius: var(--radius);
-//   border-top-right-radius: var(--radius);
 
-//   width: 100%;
-//   height: 15rem;
-//   object-fit: cover;
-// }
-// .product h4 {
-//   margin-top: 1rem;
-// }
+// // export const product_img=styled(product) {
+// //   border-top-left-radius: var(--radius);
+// //   border-top-right-radius: var(--radius);
 
-// .product button {
-//   margin-bottom: 1rem;
-//   background: var(--clr-primary-5);
-//   border-radius: var(--radius);
-//   border-color: transparent;
-//   color: var(--clr-white);
-//   padding: 0.25rem 0.5rem;
-//   text-transform: capitalize;
-//   cursor: pointer;
-// }
+// //   width: 100%;
+// //   height: 15rem;
+// //   object-fit: cover;
+// // }
+// // .product h4 {
+// //   margin-top: 1rem;
+// // }
+
+// // .product button {
+// //   margin-bottom: 1rem;
+// //   background: var(--clr-primary-5);
+// //   border-radius: var(--radius);
+// //   border-color: transparent;
+// //   color: var(--clr-white);
+// //   padding: 0.25rem 0.5rem;
+// //   text-transform: capitalize;
+// //   cursor: pointer;
+// // }
