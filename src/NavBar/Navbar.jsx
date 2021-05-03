@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/" >
+        <NavLink to="/profile" >
           <h1>Crowd Source</h1>
         </NavLink>
         <Bars/>

@@ -13,6 +13,7 @@ import Navbar from '../NavBar/Navbar';
 import ShowItems from '../Item/ShowItems';
 import ShowReqItems from '../Item/ShowReqItems';
 import BuyItem from '../Item/BuyItem';
+import About from '../NavBar/About';
 import {useFetch} from '../custom-hooks/useFetch';
 import '../Item/indexelements.js';
 import {ProfilePage} from '../Profile';
@@ -46,6 +47,7 @@ function App() {
                             <PrivateRoute exact path="/" component={LoginPage} />
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
+                            <Route path="/about" component={About} />
                             <PrivateRoute path="/showallitems" component={() => <ShowItems url={`http://localhost:8087/getAllItems`} />}/>
                             <PrivateRoute path="/profile" component={ProfilePage}/>
                             {/* <Route path="/showuseritems" component={() => <ShowItems url={`http://localhost:8085/getAllItems`} />}/>

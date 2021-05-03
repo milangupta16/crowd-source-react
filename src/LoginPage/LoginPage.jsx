@@ -4,6 +4,29 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../_actions';
 
+
+const imgstyle = {
+
+   float: 'left',
+   width:'50%',
+   height: '400px'
+}
+
+const loginstyle ={
+
+    textAlign : 'left',
+    width: '550px',
+   marginLeft:'55%',
+
+}
+
+const bodystyle ={
+    height:"480px",
+    backgroundSize: "cover",
+   
+    backgroundColor: "#f1f1f5"
+}
+
 function LoginPage() {
     const [inputs, setInputs] = useState({
         username: '',
@@ -35,9 +58,17 @@ function LoginPage() {
             dispatch(userActions.login(username, password, from));
         }
     }
+  
 
     return (
-        <div className="col-lg-8 offset-lg-2">
+        <div style={bodystyle} >
+            <div> 
+
+            <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/03/20-free-things-you-need-to-do-after-launching-your-ecommerce-website-5e664bcb60da5-760x400.png" alt="webimage" style={imgstyle} />
+           
+
+            </div>
+        <div style ={loginstyle} className="col-lg-8 offset-lg-2">
             <h2>Login</h2>
             <form name="form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -63,6 +94,7 @@ function LoginPage() {
                 </div>
             </form>
         </div>
+    </div>
     );
 }
 

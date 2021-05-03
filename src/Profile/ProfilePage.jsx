@@ -15,7 +15,7 @@ const ProfilePage = () => {
         <Jumbotron >
         <h1>Hello, {name}!</h1>
         <p>
-        Join the buying and selling marketplace that makes second hand feel like a joy.
+        Welcome to the buying and selling marketplace that makes second hand feel like a joy.
         </p>
        
         <Link to="/additem"  className="btn btn-link  btn-primary btn-lg active">Request A Item</Link>

@@ -5,7 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { alertActions, itemActions } from '../_actions';
 import { userActions } from '../_actions';
 
+
+
+
 function AddItem() {
+
+
+
+
     //console.log(window.location);
     let params = (new URL(document.location)).searchParams;
     let ID=params.get("id");
@@ -17,6 +24,7 @@ function AddItem() {
         description: '',
         baseprice: ''  
     });
+
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
     const dispatch = useDispatch();
@@ -31,6 +39,7 @@ function AddItem() {
         setItem(item => ({ ...item, [name]: value }));
     }
 
+   
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -49,9 +58,14 @@ function AddItem() {
         }
     }
 
-    return (
+    if(ID)
+    { 
+        let iname= item.itemName;
+        let idesc=item.description;
+        let ibprice =item.baseprice;
+        return (
         <div className="col-lg-8 offset-lg-2">
-            <h2>Add Item</h2>
+            <h2>Post Item</h2>
             <form name="form" onSubmit={handleSubmit}>
             <div className="form-group">
                     <label>Name</label>
@@ -68,23 +82,68 @@ function AddItem() {
                     }
                 </div>
                 <div className="form-group">
-                    <label>Base Price</label>
+                    <label>Price Want to Offer</label>
                     <input type="text" name="baseprice" value={item.baseprice} onChange={handleChange} className={'form-control' + (submitted && !item.baseprice ? ' is-invalid' : '')} />
                     {submitted && !item.baseprice &&
-                        <div className="invalid-feedback">Base Price is required</div>
+                        <div className="invalid-feedback"> Price is required</div>
                     }
                 </div>
                 
                 <div className="form-group">
                     <button className="btn btn-primary">
                         {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                        Add Item
+                         Bid Item
                     </button>
                     {/* <Link to="/login" className="btn btn-link">Cancel</Link> */}
                 </div>
             </form>
         </div>
     );
+    }
+    else
+    {
+        return (
+            <div className="col-lg-8 offset-lg-2">
+                <h2>Add Item</h2>
+                <form name="form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                        <label>Name</label>
+                        <input type="text" name="itemName" value={item.itemName} onChange={handleChange} className={'form-control' + (submitted && !item.itemName ? ' is-invalid' : '')} />
+                        {submitted && !item.itemName &&
+                            <div className="invalid-feedback">Name is required</div>
+                        }
+                    </div>
+                    <div className="form-group">
+                        <label>Description</label>
+                        <input type="text" name="description" value={item.description} onChange={handleChange} className={'form-control' + (submitted && !item.description ? ' is-invalid' : '')} />
+                        {submitted && !item.description &&
+                            <div className="invalid-feedback">Description is required</div>
+                        }
+                    </div>
+                    <div className="form-group">
+                        <label>Max Price</label>
+                        <input type="text" name="baseprice" value={item.baseprice} onChange={handleChange} className={'form-control' + (submitted && !item.baseprice ? ' is-invalid' : '')} />
+                        {submitted && !item.baseprice &&
+                            <div className="invalid-feedback"> Price is required</div>
+                        }
+                    </div>
+                    {/* <div className="form-group">
+                       <input type="file" onChange={fileSelectedHandler}/>
+                        <button onClick={fileUploadHandler}>Upload!</button>
+
+                    </div>
+                     */}
+                    <div className="form-group">
+                        <button className="btn btn-primary">
+                            {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                            Add Item
+                        </button>
+                        {/* <Link to="/login" className="btn btn-link">Cancel</Link> */}
+                    </div>
+                </form>
+            </div>
+        );
+    }
 }
 
 export { AddItem };
