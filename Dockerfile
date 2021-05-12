@@ -8,5 +8,5 @@ RUN npm install --silent
 
 
 COPY . .
-EXPOSE 8085
+EXPOSE 8081
 CMD ["npm", "start"]
