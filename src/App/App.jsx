@@ -48,7 +48,7 @@ function App() {
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
                             <Route path="/about" component={About} />
-                            <PrivateRoute path="/showallitems" component={() => <ShowItems url={`http://localhost:8088/getAllItems`} />}/>
+                            <PrivateRoute path="/showallitems" component={() => <ShowItems url={`http://localhost:8087/getAllItems`} />}/>
                             <PrivateRoute path="/profile" component={ProfilePage}/>
                             {/* <Route path="/showuseritems" component={() => <ShowItems url={`http://localhost:8085/getAllItems`} />}/>
                             <Route path="/showallitems" component={() => <ShowItems url={`http://localhost:8085/getAllItems`} />}/> */}

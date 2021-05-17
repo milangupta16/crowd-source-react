@@ -46,7 +46,7 @@ function RegisterPage() {
 
      function handleOnChange(e) {
          user.isDuplicateUser =  axios.get(
-          'http://localhost:8088/isDuplicateUser',{params:{user:user.username}}
+          'http://localhost:8087/isDuplicateUser',{params:{user:user.username}}
         ).then(res => {
             console.log(res && res.data);
            
